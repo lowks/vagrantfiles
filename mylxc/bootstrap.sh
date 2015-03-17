@@ -70,5 +70,7 @@ base_usr_dir="/usr/bin"
 
 for script in iex mix elixirc elixir
 do
+if ! [-D $base_usr_dir/$script]; then
   ln -s /home/vagrant/vendor/elixir/bin/$script $base_usr_dir/$script
+fi
 done
